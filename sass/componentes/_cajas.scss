@@ -53,6 +53,10 @@
 		text-align: center;
 		color: $color-claro;
 		p {
+			display: none;
+			@include media(desktop-s){
+				display: inline;
+			}
 			color: $color-claro;
 		}
 		h3 {
@@ -72,15 +76,31 @@
 }
 
 .caja--grande {
-	max-width: 1000px;
-	height: 550px;
-	margin-right: 20px;
+	width: 350;
+	height: 250px;
 	h2 {
 		@include titulos($Fuente2);
-		@include font-size(50px);
+		@include font-size(20px);
+
+		@include media(desktop-s){
+			@include titulos($Fuente2);
+			@include font-size(50px);
+		}
 	}
 	.caja--con-fondo__contenido {
 		padding-top: 200px;
+	}
+	@include media(desktop-s){
+		max-width: 1000px;
+		height: 550px;
+		margin-right: 20px;
+		h2 {
+			@include titulos($Fuente2);
+			@include font-size(50px);
+		}
+		.caja--con-fondo__contenido {
+			padding-top: 200px;
+		}
 	}
 }
 
